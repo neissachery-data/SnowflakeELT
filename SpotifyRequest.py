@@ -57,8 +57,8 @@ class spotifyapiretrieval:
             print(f"Error writing to file {file_name}: {e}")
 
 if __name__ == "__main__":
-    client_id = "de21e4390faf42f296f755475415b6c6"
-    client_secret = "75ba223395624c818eaa722e76c2e1ec" 
+    client_id = ""
+    client_secret = "" #removed for security purposes
     api = spotifyapiretrieval(client_id, client_secret)
      
     playlist_dict = {'Haitian_Party':'77Y0FzsMxplH9yAUJnbcJU', 
