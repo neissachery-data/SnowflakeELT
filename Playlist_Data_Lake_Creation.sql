@@ -1,0 +1,17 @@
+CARRIBBEAN_SPOTIFY.CARIB_PLAYLISTS.SPOTIFY_STAGECREATE DATABASE CARRIBBEAN_SPOTIFY;
+CREATE SCHEMA Carib_Playlists; 
+
+CREATE STAGE spotify_stage;
+
+
+CREATE OR REPLACE TABLE Spotify_Playlist_DL(
+    playlist_data variant
+);
+
+COPY INTO Spotify_Playlist_DL
+FROM @spotify_stage
+FILES = ('Best_Soca_Hits.json', 'Soca_2024.json', 'Haitian_Party.json', 'Kompas_Mix.json', 'Best_Dancehall.json', 'Dancehall_2024.json')
+FILE_FORMAT = (CARRIBBEAN_SPOTIFY.CARIB_PLAYLISTS.SPOTIFY_STAGECARRIBBEAN_SPOTIFY.CARIB_PLAYLISTS.SPOTIFY_STAGETYPE = JSON);
+
+
+SELECT * FROM SPOTIFY_PLAYLIST_DL;
